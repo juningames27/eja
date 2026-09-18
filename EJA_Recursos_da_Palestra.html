@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guia de ferramentas digitais apresentado na palestra sobre EJA, educação e tecnologia.">
+  <title>EJA e Tecnologia | Recursos da Palestra</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f766e'/%3E%3Cpath d='M14 20h36v28H14z' fill='%23fff'/%3E%3Cpath d='M32 20v28M18 27h10M36 27h10M18 34h10M36 34h10' stroke='%230f766e' stroke-width='3'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #163331;
+      --muted: #5f7471;
+      --paper: #fbfffd;
+      --teal: #0f766e;
+      --teal-dark: #095b55;
+      --mint: #dff7ee;
+      --sun: #f4b942;
+      --blue: #2979a8;
+      --line: #d8e9e4;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(16, 79, 73, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 5%, rgba(244, 185, 66, 0.20), transparent 25rem),
+        radial-gradient(circle at 94% 38%, rgba(41, 121, 168, 0.12), transparent 24rem),
+        var(--paper);
+      font-family: Inter, ui-rounded, "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(251, 255, 253, 0.88);
+      border-bottom: 1px solid rgba(216, 233, 228, 0.8);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: white;
+      background: var(--teal);
+      box-shadow: 0 7px 18px rgba(15, 118, 110, 0.23);
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      padding: 9px 13px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--teal-dark);
+      background: var(--mint);
+      outline: none;
+    }
+
+    .hero {
+      padding: 90px 0 66px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 68px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 17px;
+      padding: 7px 12px;
+      border: 1px solid #bde4d8;
+      border-radius: 999px;
+      color: var(--teal-dark);
+      background: var(--mint);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sun);
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(2.55rem, 6vw, 5.25rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    h1 span { color: var(--teal); }
+
+    .hero-copy {
+      max-width: 650px;
+      margin: 26px 0 32px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 11px 19px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .button:focus-visible { outline: 3px solid rgba(41, 121, 168, 0.28); outline-offset: 3px; }
+
+    .button-primary {
+      color: white;
+      background: var(--teal);
+      box-shadow: 0 10px 24px rgba(15, 118, 110, 0.25);
+    }
+
+    .button-primary:hover { background: var(--teal-dark); }
+
+    .button-secondary {
+      border-color: var(--line);
+      background: var(--white);
+    }
+
+    .button-secondary:hover { background: #f4fbf8; }
+
+    .hero-card {
+      position: relative;
+      min-height: 400px;
+      overflow: hidden;
+      padding: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: 34px;
+      background: linear-gradient(145deg, #0f766e 0%, #164b63 100%);
+      box-shadow: var(--shadow);
+      color: white;
+    }
+
+    .hero-card::before,
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .hero-card::before {
+      width: 230px;
+      height: 230px;
+      right: -75px;
+      top: -70px;
+      background: rgba(244, 185, 66, 0.88);
+    }
+
+    .hero-card::after {
+      width: 150px;
+      height: 150px;
+      left: -65px;
+      bottom: -70px;
+      border: 26px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .book {
+      position: absolute;
+      inset: auto 34px 34px 34px;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      min-height: 185px;
+      filter: drop-shadow(0 18px 25px rgba(0, 0, 0, 0.18));
+    }
+
+    .page {
+      padding: 29px 23px;
+      background: #fffdf5;
+      color: var(--ink);
+    }
+
+    .page:first-child { border-radius: 9px 2px 2px 22px; transform: rotate(2deg); }
+    .page:last-child { border-radius: 2px 9px 22px 2px; transform: rotate(-2deg); }
+    .page b { display: block; color: var(--teal); font-size: 1.1rem; }
+    .page span { display: block; margin-top: 11px; color: var(--muted); font-size: 0.88rem; line-height: 1.45; }
+
+    .hero-note {
+      position: relative;
+      z-index: 2;
+      max-width: 250px;
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 750;
+      line-height: 1.4;
+    }
+
+    section { scroll-margin-top: 90px; }
+
+    .about {
+      padding: 54px 0;
+      border-block: 1px solid var(--line);
+      background: rgba(223, 247, 238, 0.48);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .section-kicker {
+      margin: 0 0 8px;
+      color: var(--teal);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .about-text { margin: 5px 0 0; color: var(--muted); font-size: 1.06rem; }
+    .about-text strong { color: var(--ink); }
+
+    .resources { padding: 88px 0 94px; }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 34px;
+    }
+
+    .section-heading p:last-child {
+      max-width: 470px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .tool-card {
+      position: relative;
+      display: flex;
+      min-height: 245px;
+      flex-direction: column;
+      padding: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 8px 28px rgba(21, 77, 71, 0.07);
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+      border-color: #9fcfc3;
+      box-shadow: 0 18px 34px rgba(21, 77, 71, 0.13);
+    }
+
+    .tool-card:focus-visible { outline: 3px solid rgba(41, 121, 168, 0.28); outline-offset: 4px; }
+
+    .tool-card.featured {
+      grid-column: span 2;
+      color: white;
+      border-color: transparent;
+      background: linear-gradient(135deg, #102e37, #0f766e);
+    }
+
+    .tool-card.featured .tool-description,
+    .tool-card.featured .open-label { color: rgba(255, 255, 255, 0.78); }
+
+    .tool-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .tool-icon {
+      width: 51px;
+      height: 51px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 16px;
+      color: var(--teal-dark);
+      background: var(--mint);
+      font-size: 0.88rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .featured .tool-icon { color: var(--ink); background: var(--sun); }
+
+    .arrow {
+      display: grid;
+      width: 37px;
+      height: 37px;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(15, 118, 110, 0.08);
+      font-size: 1.1rem;
+      transition: transform 180ms ease;
+    }
+
+    .featured .arrow { background: rgba(255, 255, 255, 0.12); }
+    .tool-card:hover .arrow { transform: translate(3px, -3px); }
+
+    .tool-card h3 {
+      margin: 24px 0 7px;
+      font-size: 1.3rem;
+      letter-spacing: -0.025em;
+    }
+
+    .tool-description { margin: 0; color: var(--muted); }
+    .open-label { margin: auto 0 0; padding-top: 24px; color: var(--teal); font-size: 0.88rem; font-weight: 800; }
+
+    .tip {
+      margin-top: 34px;
+      padding: 23px 26px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid #f2d592;
+      border-radius: 20px;
+      background: #fff8e8;
+    }
+
+    .tip-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 13px;
+      background: var(--sun);
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+
+    .tip p { margin: 0; color: #6c5527; }
+
+    .contact {
+      padding: 76px 0;
+      color: white;
+      background: #102f35;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .contact .section-kicker { color: #84dfca; }
+    .contact-intro { margin: 18px 0 0; color: #c6d8d5; max-width: 480px; }
+
+    .contact-list { display: grid; gap: 13px; }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      gap: 15px;
+      align-items: center;
+      padding: 17px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .contact-avatar {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: #102f35;
+      background: var(--sun);
+      font-weight: 900;
+    }
+
+    .contact-name { margin: 0; font-weight: 800; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 3px; }
+    .contact-links a { color: #c6d8d5; font-size: 0.9rem; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .contact-links a:hover { color: white; }
+    .whatsapp {
+      padding: 8px 11px;
+      border-radius: 10px;
+      color: #10352e;
+      background: #8ee0b6;
+      font-size: 0.82rem;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 24px 0;
+      color: #a9bfbb;
+      background: #0b252a;
+      text-align: center;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero { padding-top: 62px; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 36px; }
+      .hero-card { min-height: 350px; }
+      .about-grid, .contact-grid { gap: 24px; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .tool-card.featured { grid-column: span 2; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 28px, 1120px); }
+      .nav { min-height: 64px; }
+      .nav-links a:first-child { display: none; }
+      .nav-links a { padding-inline: 9px; font-size: 0.86rem; }
+      .hero { padding: 50px 0 46px; }
+      h1 { font-size: clamp(2.4rem, 14vw, 3.65rem); }
+      .hero-card { min-height: 325px; padding: 25px; border-radius: 26px; }
+      .book { inset: auto 20px 22px 20px; min-height: 165px; }
+      .page { padding: 23px 16px; }
+      .section-heading { display: block; }
+      .section-heading p:last-child { margin-top: 15px; }
+      .resources { padding: 68px 0; }
+      .cards { grid-template-columns: 1fr; }
+      .tool-card.featured { grid-column: auto; }
+      .tool-card { min-height: 220px; }
+      .tip { align-items: flex-start; }
+      .contact-card { grid-template-columns: 44px 1fr; }
+      .contact-avatar { width: 44px; height: 44px; }
+      .whatsapp { grid-column: 2; justify-self: start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <span class="brand-mark">EJA</span>
+        <span>Educação e tecnologia</span>
+      </a>
+      <div class="nav-links">
+        <a href="#sobre">Sobre a EJA</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="#contatos">Contatos</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Recursos da palestra</p>
+          <h1>Aprender não tem <span>idade.</span></h1>
+          <p class="hero-copy">A EJA abre caminhos para quem deseja retomar os estudos. A tecnologia pode tornar esse percurso mais criativo, acessível e conectado com o dia a dia.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#ferramentas">Ver sites da palestra <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="#sobre">Conhecer a EJA</a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Ilustração de um livro aberto sobre educação e tecnologia">
+          <p class="hero-note">Cada nova ferramenta é uma nova possibilidade de aprender.</p>
+          <div class="book" aria-hidden="true">
+            <div class="page"><b>Educação</b><span>Conhecimento que transforma histórias.</span></div>
+            <div class="page"><b>Tecnologia</b><span>Recursos para criar, estudar e compartilhar.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="container about-grid">
+        <div>
+          <p class="section-kicker">O que é</p>
+          <h2>Educação de Jovens e Adultos</h2>
+        </div>
+        <p class="about-text">A <strong>EJA</strong> é uma modalidade de ensino destinada a jovens, adultos e idosos que não puderam concluir os estudos na idade regular. Ela respeita as experiências de cada estudante e oferece uma nova oportunidade para aprender, conquistar autonomia e buscar novos projetos de vida.</p>
+      </div>
+    </section>
+
+    <section class="resources" id="ferramentas">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Links úteis</p>
+            <h2>Ferramentas apresentadas</h2>
+          </div>
+          <p>Clique em qualquer cartão para abrir o site em uma nova aba. Use as ferramentas para pesquisar, estudar, criar e organizar atividades.</p>
+        </div>
+
+        <div class="cards">
+          <a class="tool-card featured" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">
+            <div class="tool-top"><span class="tool-icon">IA</span><span class="arrow" aria-hidden="true">↗</span></div>
+            <h3>ChatGPT</h3>
+            <p class="tool-description">Inteligência artificial para tirar dúvidas, criar textos, resumir conteúdos e apoiar os estudos.</p>
+            <p class="open-label">Abrir IA geral</p>
+          </a>
+
+          <a class="tool-card" href="https://easymusic.ai/pt/ai-music-generator" target="_blank" rel="noopener noreferrer">
+            <div class="tool-top"><span class="tool-icon">♫</span><span class="arrow" aria-hidden="true">↗</span></div>
+            <h3>EasyMusic.AI</h3>
+            <p class="tool-description">Criação de músicas com inteligência artificial a partir de ideias e textos.</p>
+            <p class="open-label">Criar músicas</p>
+          </a>
+
+          <a class="tool-card" href="https://studio.tripo3d.ai/pt/workspace/generate/6f3bb4db-8ac1-451b-9f84-181caf31daea" target="_blank" rel="noopener noreferrer">
+            <div class="tool-top"><span class="tool-icon">3D</span><span class="arrow" aria-hidden="true">↗</span></div>
+            <h3>Tripo AI</h3>
+            <p class="tool-description">Transforma imagens e descrições em modelos 3D usando inteligência artificial.</p>
+            <p class="open-label">Criar modelos 3D</p>
+          </a>
+
+          <a class="tool-card" href="https://classroom.google.com/" target="_blank" rel="noopener noreferrer">
+            <div class="tool-top"><span class="tool-icon">SC</span><span class="arrow" aria-hidden="true">↗</span></div>
+            <h3>Google Sala de Aula</h3>
+            <p class="tool-description">Ambiente para receber materiais, acompanhar atividades e se comunicar com a turma.</p>
+            <p class="open-label">Acessar a sala</p>
+          </a>
+
+          <a class="tool-card" href="https://pt.khanacademy.org/brasil" target="_blank" rel="noopener noreferrer">
+            <div class="tool-top"><span class="tool-icon">KA</span><span class="arrow" aria-hidden="true">↗</span></div>
+            <h3>Khan Academy</h3>
+            <p class="tool-description">Aulas e exercícios gratuitos para aprender matemática e outras matérias no próprio ritmo.</p>
+            <p class="open-label">Começar a estudar</p>
+          </a>
+
+          <a class="tool-card" href="https://docs.google.com/forms/u/2/?pli=1&amp;tgif=d" target="_blank" rel="noopener noreferrer">
+            <div class="tool-top"><span class="tool-icon">GF</span><span class="arrow" aria-hidden="true">↗</span></div>
+            <h3>Google Formulários</h3>
+            <p class="tool-description">Criação de questionários, pesquisas, inscrições e atividades avaliativas.</p>
+            <p class="open-label">Criar formulário</p>
+          </a>
+
+          <a class="tool-card" href="https://www.tinkercad.com/things/fSA9MjFnr0z-neat-bombul/editel" target="_blank" rel="noopener noreferrer">
+            <div class="tool-top"><span class="tool-icon">TK</span><span class="arrow" aria-hidden="true">↗</span></div>
+            <h3>Tinkercad</h3>
+            <p class="tool-description">Espaço para aprender eletrônica, simular circuitos e criar projetos em 3D.</p>
+            <p class="open-label">Abrir o projeto</p>
+          </a>
+        </div>
+
+        <div class="tip">
+          <span class="tip-mark" aria-hidden="true">!</span>
+          <p><strong>Dica:</strong> use a tecnologia como apoio. Confira as informações, faça perguntas e experimente cada ferramenta com calma.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contatos">
+      <div class="container contact-grid">
+        <div>
+          <p class="section-kicker">Fale conosco</p>
+          <h2>Dúvidas sobre a palestra?</h2>
+          <p class="contact-intro">Entre em contato por e-mail ou WhatsApp. Toque nos dados abaixo para enviar uma mensagem.</p>
+        </div>
+
+        <div class="contact-list">
+          <article class="contact-card">
+            <div class="contact-avatar" aria-hidden="true">WB</div>
+            <div>
+              <p class="contact-name">Wendel Brito</p>
+              <div class="contact-links">
+                <a href="mailto:wendelbrito589987@gmail.com">wendelbrito589987@gmail.com</a>
+                <a href="tel:+559870076449">(98) 9 7007-6449</a>
+              </div>
+            </div>
+            <a class="whatsapp" href="https://wa.me/559870076449" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </article>
+
+          <article class="contact-card">
+            <div class="contact-avatar" aria-hidden="true">MM</div>
+            <div>
+              <p class="contact-name">Murilo Mourão</p>
+              <div class="contact-links">
+                <a href="mailto:mouraomurilo7@gmail.com">mouraomurilo7@gmail.com</a>
+                <a href="tel:+559885729778">(98) 9 8572-9778</a>
+              </div>
+            </div>
+            <a class="whatsapp" href="https://wa.me/559885729778" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">EJA e Tecnologia — aprender, criar e transformar.</div>
+  </footer>
+</body>
+</html>

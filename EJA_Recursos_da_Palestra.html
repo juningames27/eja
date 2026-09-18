@@ -27,6 +27,7 @@
 
     body {
       margin: 0;
+      overflow-x: hidden;
       color: var(--ink);
       background:
         radial-gradient(circle at 8% 5%, rgba(244, 185, 66, 0.20), transparent 25rem),
@@ -62,6 +63,7 @@
 
     .brand {
       display: inline-flex;
+      min-width: 0;
       align-items: center;
       gap: 11px;
       font-weight: 800;
@@ -83,11 +85,15 @@
 
     .nav-links {
       display: flex;
+      flex-shrink: 0;
       align-items: center;
       gap: 8px;
     }
 
     .nav-links a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
       padding: 9px 13px;
       border-radius: 999px;
       color: var(--muted);
@@ -449,6 +455,8 @@
       background: rgba(255, 255, 255, 0.06);
     }
 
+    .contact-card > div:nth-child(2) { min-width: 0; }
+
     .contact-avatar {
       width: 48px;
       height: 48px;
@@ -462,9 +470,18 @@
 
     .contact-name { margin: 0; font-weight: 800; }
     .contact-links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 3px; }
-    .contact-links a { color: #c6d8d5; font-size: 0.9rem; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .contact-links a {
+      color: #c6d8d5;
+      overflow-wrap: anywhere;
+      font-size: 0.9rem;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
     .contact-links a:hover { color: white; }
     .whatsapp {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
       padding: 8px 11px;
       border-radius: 10px;
       color: #10352e;
@@ -494,11 +511,16 @@
 
     @media (max-width: 640px) {
       .container { width: min(100% - 28px, 1120px); }
-      .nav { min-height: 64px; }
+      .nav { min-height: 64px; gap: 10px; }
+      .brand > span:last-child { display: none; }
+      .brand-mark { width: 36px; height: 36px; border-radius: 11px; }
+      .nav-links { gap: 2px; }
       .nav-links a:first-child { display: none; }
-      .nav-links a { padding-inline: 9px; font-size: 0.86rem; }
+      .nav-links a { padding: 9px 7px; font-size: 0.86rem; }
       .hero { padding: 50px 0 46px; }
       h1 { font-size: clamp(2.4rem, 14vw, 3.65rem); }
+      .hero-actions { display: grid; grid-template-columns: 1fr; }
+      .button { width: 100%; }
       .hero-card { min-height: 325px; padding: 25px; border-radius: 26px; }
       .book { inset: auto 20px 22px 20px; min-height: 165px; }
       .page { padding: 23px 16px; }
@@ -512,6 +534,16 @@
       .contact-card { grid-template-columns: 44px 1fr; }
       .contact-avatar { width: 44px; height: 44px; }
       .whatsapp { grid-column: 2; justify-self: start; }
+    }
+
+    @media (max-width: 380px) {
+      .container { width: min(100% - 22px, 1120px); }
+      .hero { padding-top: 42px; }
+      .hero-card { min-height: 310px; padding: 21px; }
+      .book { inset: auto 14px 18px 14px; }
+      .page { padding: 21px 13px; }
+      .tool-card { padding: 21px; }
+      .contact-card { padding: 14px; gap: 12px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
